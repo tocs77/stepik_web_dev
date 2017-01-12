@@ -1,9 +1,9 @@
-from os import environ
-from cgi import parse_qs, escape
+#from os import environ
+#from cgi import parse_qs, escape
 
-bind = '0.0.0.0:' + environ.get('PORT', '8080')
-max_requests = 1000
-worker_class = 'gevent'
+#bind = '0.0.0.0:' + environ.get('PORT', '8080')
+#max_requests = 1000
+#worker_class = 'gevent'
 
 def application(environ, start_response):
 
