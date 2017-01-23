@@ -5,7 +5,7 @@
 #max_requests = 1000
 #worker_class = 'gevent'
 
-def application(environ, start_response):
+def app(environ, start_response):
 
         start_response("200 OK", [
             ("Content-Type", "text/plain"),
