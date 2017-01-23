@@ -1,15 +1,10 @@
-#from os import environ
-#from cgi import parse_qs, escape
-
-#bind = '0.0.0.0:' + environ.get('PORT', '8080')
-#max_requests = 1000
-#worker_class = 'gevent'
-
-def app(environ, start_response):
-
-        start_response("200 OK", [
-            ("Content-Type", "text/plain"),
-            ("Content-Length", str(len(data)))
-        ])
-       	print(environ['QUERY_STRING'])
-        return ([1,2])
+def application(environ, start_response):
+    body = [p for p in environ['QUERY_STRING'].split('&')]
+    body = '\n'.join(body)
+    status = '200 OK'
+    headers = [
+        ('Content-Type', 'text/plain'),
+        ('Content-Lenght', str(len(body)))
+    ]
+    start_response(status, headers)
+return [body]
