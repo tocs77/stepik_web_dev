@@ -7,4 +7,4 @@ def application(environ, start_response):
         ('Content-Lenght', str(len(body)))
     ]
     start_response(status, headers)
-return [body]
+	return [body]
